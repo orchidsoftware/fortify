@@ -29,7 +29,7 @@ class TwoFactorScreenAuthenticatable
                 ModalToggle::make(__('Show Recovery Codes'))
                     ->icon('lock-open')
                     ->modal('two-factor-auth')
-                    ->canSee(!empty(auth()->user()->two_factor_secret))
+                    ->canSee(! empty(auth()->user()->two_factor_secret))
                     ->open(session('two-factor-auth') === 'show'),
 
                 Button::make('Enable Two-Factor')
@@ -39,12 +39,12 @@ class TwoFactorScreenAuthenticatable
 
                 Button::make('Regenerate Recovery Codes')
                     ->icon('refresh')
-                    ->canSee(!empty(auth()->user()->two_factor_secret))
+                    ->canSee(! empty(auth()->user()->two_factor_secret))
                     ->method('generateNewRecoveryCodes'),
 
                 Button::make(__('Disable Two-Factor'))
                     ->icon('lock-open')
-                    ->canSee(!empty(auth()->user()->two_factor_secret))
+                    ->canSee(! empty(auth()->user()->two_factor_secret))
                     ->method('disableTwoFactorAuth'),
             ]);
     }

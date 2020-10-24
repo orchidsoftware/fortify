@@ -59,5 +59,4 @@ class AuthServiceProvider extends ServiceProvider
 
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'orchid-fortify');
     }
-
 }
