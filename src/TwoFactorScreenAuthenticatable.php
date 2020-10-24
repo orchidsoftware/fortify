@@ -65,12 +65,11 @@ trait TwoFactorScreenAuthenticatable
     /**
      * Disable two-factor authentication for the given user.
      *
-     * @param Request $request
+     * @param Request                        $request
+     * @param DisableTwoFactorAuthentication $disableTwoFactorAuthentication
      */
-    public function disableTwoFactorAuth(Request $request)
+    public function disableTwoFactorAuth(Request $request, DisableTwoFactorAuthentication $disableTwoFactorAuthentication)
     {
-        $disableTwoFactorAuthentication = app(DisableTwoFactorAuthentication::class);
-
         $disableTwoFactorAuthentication($request->user());
 
         Toast::success(__('Two-factor authentication has been disabled.'));
@@ -79,15 +78,14 @@ trait TwoFactorScreenAuthenticatable
     /**
      * Generate new recovery codes for the user.
      *
-     * @param Request $request
+     * @param Request                  $request
+     * @param GenerateNewRecoveryCodes $generateNewRecoveryCodes
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function generateNewRecoveryCodes(Request $request)
+    public function generateNewRecoveryCodes(Request $request, GenerateNewRecoveryCodes $generateNewRecoveryCodes)
     {
-        $disableTwoFactorAuthentication = app(GenerateNewRecoveryCodes::class);
-
-        $disableTwoFactorAuthentication($request->user());
+        $generateNewRecoveryCodes($request->user());
 
         Toast::success(__('Recovery codes have been updated.'));
 
@@ -97,15 +95,14 @@ trait TwoFactorScreenAuthenticatable
     /**
      * Enable two-factor authentication for the user.
      *
-     * @param Request $request
+     * @param Request                       $request
+     * @param EnableTwoFactorAuthentication $enableTwoFactorAuthentication
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function enableTwoFactorAuth(Request $request)
+    public function enableTwoFactorAuth(Request $request, EnableTwoFactorAuthentication $enableTwoFactorAuthentication)
     {
-        $disableTwoFactorAuthentication = app(EnableTwoFactorAuthentication::class);
-
-        $disableTwoFactorAuthentication($request->user());
+        $enableTwoFactorAuthentication($request->user());
 
         Toast::success(__('Two-factor authentication has been enabled.'));
 
