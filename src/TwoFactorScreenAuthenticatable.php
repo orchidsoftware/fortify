@@ -21,30 +21,33 @@ trait TwoFactorScreenAuthenticatable
      */
     public function twoFactorCommandBar(): DropDown
     {
-        return DropDown::make(__('Two-Factor Auth'))
+        $twoFactorSecret = auth()->user()->two_factor_secret;
+
+
+        return DropDown::make('Two-Factor Auth')
             ->icon('screen-smartphone')
             ->canSee(Features::canManageTwoFactorAuthentication())
             ->list([
 
-                ModalToggle::make(__('Show Recovery Codes'))
+                ModalToggle::make('Show Recovery Codes')
                     ->icon('lock-open')
                     ->modal('two-factor-auth')
-                    ->canSee(! empty(auth()->user()->two_factor_secret))
+                    ->canSee(! empty($twoFactorSecret))
                     ->open(session('two-factor-auth') === 'show'),
 
                 Button::make('Enable Two-Factor')
                     ->icon('unlock')
-                    ->canSee(empty(auth()->user()->two_factor_secret))
+                    ->canSee(empty($twoFactorSecret))
                     ->method('enableTwoFactorAuth'),
 
                 Button::make('Regenerate Recovery Codes')
                     ->icon('refresh')
-                    ->canSee(! empty(auth()->user()->two_factor_secret))
+                    ->canSee(! empty($twoFactorSecret))
                     ->method('generateNewRecoveryCodes'),
 
-                Button::make(__('Disable Two-Factor'))
+                Button::make('Disable Two-Factor')
                     ->icon('lock-open')
-                    ->canSee(! empty(auth()->user()->two_factor_secret))
+                    ->canSee(! empty($twoFactorSecret))
                     ->method('disableTwoFactorAuth'),
             ]);
     }
@@ -57,7 +60,7 @@ trait TwoFactorScreenAuthenticatable
         return Layout::modal('two-factor-auth', [
             Layout::view('orchid-fortify::profile.two-factor-authentication-form'),
         ])
-            ->title('Two factor authentication')
+            ->title(__('Two factor authentication'))
             ->staticBackdrop()
             ->withoutApplyButton();
     }
