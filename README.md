@@ -24,6 +24,12 @@ composer require orchid/fortify
 Disable built-in authorization by changing the value in `config/platform.php`
 
 ```php
+/*
+|--------------------------------------------------------------------------
+| Auth Page
+|--------------------------------------------------------------------------
+*/
+
 'auth'  => false,
 ```
 
