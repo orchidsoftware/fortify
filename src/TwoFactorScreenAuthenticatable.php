@@ -14,7 +14,7 @@ use Orchid\Screen\Layouts\Modal;
 use Orchid\Support\Facades\Layout;
 use Orchid\Support\Facades\Toast;
 
-class TwoFactorScreenAuthenticatable
+trait TwoFactorScreenAuthenticatable
 {
     /**
      * @return DropDown
