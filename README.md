@@ -1,4 +1,4 @@
-# Orchid template for Fortify
+# Template for Fortify
 
 ## Introduction
 
