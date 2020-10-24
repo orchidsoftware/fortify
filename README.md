@@ -21,6 +21,40 @@ To get started, install package using composer:
 composer require orchid/fortify
 ```
 
+Disable built-in authorization by changing the value in `config/platform.php`
+
+```php
+'auth'  => false,
+```
+
+To use on the screen page, use the trait `Orchid\Fortify\TwoFactorScreenAuthenticatable`:
+
+```php
+use Orchid\Fortify\TwoFactorScreenAuthenticatable;
+
+/**
+ * Button commands.
+ *
+ * @return Action[]
+ */
+public function commandBar(): array
+{
+    return [
+        $this->twoFactorCommandBar(),
+    ];
+}
+
+/**
+ * @return \Orchid\Screen\Layout[]
+ */
+public function layout(): array
+{
+    return [
+        $this->twoFactorLayout(),
+    ];
+}
+```
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
