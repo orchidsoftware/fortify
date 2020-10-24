@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Authentication scaffolding with Bootstrap 4. 
+Authentication scaffolding with Laravel Orchid template. 
 
 ### Installation
 
