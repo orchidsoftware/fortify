@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Authentication scaffolding with Laravel Orchid template. 
+Authentication scaffolding with [Laravel Orchid](https://github.com/orchidsoftware/platform) template. 
 
 ### Installation
 
