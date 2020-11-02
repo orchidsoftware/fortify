@@ -8,14 +8,14 @@ Authentication scaffolding with [Laravel Orchid](https://github.com/orchidsoftwa
 
 You have to install [Laravel Fortify](https://github.com/laravel/fortify), and complete all setup without add blades calling in `App\Providers\FortifyServiceProvider.php`.
 
-After installation completed please add session migration using:
+After installation completed, please add session migration using:
 (to activate TwoFactorAuthentication method)
 
 ```bash
 php artisan session:table
 ```
 
-To get started, install package using composer:
+To get started, install the package using composer:
 
 ```bash
 composer require orchid/fortify
