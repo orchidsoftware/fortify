@@ -38,7 +38,8 @@ trait TwoFactorScreenAuthenticatable
                 Button::make('Enable Two-Factor')
                     ->icon('unlock')
                     ->canSee(empty($twoFactorSecret))
-                    ->method('enableTwoFactorAuth'),
+                    ->method('enableTwoFactorAuth')
+                    ->confirm(__("When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from your phone's Google Authenticator application.")),
 
                 Button::make('Regenerate Recovery Codes')
                     ->icon('refresh')
