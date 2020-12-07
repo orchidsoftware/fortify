@@ -19,7 +19,7 @@
 
         <div class="bg-light px-4 py-2">
             @foreach (json_decode(decrypt(auth()->user()->two_factor_recovery_codes), true) as $code)
-                <p class="m-0 text-muted">{{ $code }}</p>
+                <p class="m-0 text-black">{{ $code }}</p>
             @endforeach
         </div>
     @endif
