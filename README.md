@@ -4,7 +4,7 @@
 
 Authentication scaffolding with [Laravel Orchid](https://github.com/orchidsoftware/platform) template. 
 
-### Installation
+## Installation
 
 You have to install [Laravel Fortify](https://github.com/laravel/fortify), and complete all setup without add blades calling in `App\Providers\FortifyServiceProvider.php`.
 
