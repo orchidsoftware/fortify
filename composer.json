@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "laravel/fortify": "^1.6",
+        "laravel/fortify": "^1.7",
         "orchid/platform": "^9.6"
     },
     "require-dev": {
