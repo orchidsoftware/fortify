@@ -18,7 +18,7 @@
 
 
         @if (Route::has('password.request') || Route::has('register'))
-            <hr class="mt-0">
+            <hr class="mt-4">
 
             <p class="text-center mb-0">
                 @if (Route::has('register'))
