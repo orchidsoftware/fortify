@@ -4,14 +4,15 @@
 @section('content')
     <h1 class="h4 text-black mb-4">{{__('Forgot your password?')}}</h1>
 
-    <form class="m-t-md"
-          role="form"
-          method="POST"
-          data-controller="form"
-          data-action="form#submit"
-          data-form-button-animate="#button-login"
-          data-form-button-text="{{ __('Loading...') }}"
-          action="{{ route('password.email') }}">
+    <form
+        role="form"
+        method="POST"
+        data-controller="form"
+        data-action="form#submit"
+        data-turbo="{{ var_export(Str::startsWith(request()->path(), config('platform.prefix'))) }}"
+        data-form-button-animate="#button-login"
+        data-form-button-text="{{ __('Loading...') }}"
+        action="{{ route('password.email') }}">
         @csrf
 
         @if (session('status'))
@@ -36,7 +37,7 @@
 
         <div class="row align-items-center">
             <div class="ml-auto col-md-8 col-xs-12">
-                <button id="button-login" type="submit" class="btn btn-default btn-block" tabindex="2">
+                <button id="button-login" type="submit" class="btn btn-default" tabindex="2">
                     {{ __('Email Password Reset Link') }}
                 </button>
             </div>

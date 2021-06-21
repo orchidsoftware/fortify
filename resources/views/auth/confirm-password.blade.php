@@ -4,14 +4,15 @@
 
     <h1 class="h4 text-black mb-4">{{ __('Confirm password') }}</h1>
 
-    <form class="m-t-md"
-          role="form"
-          method="POST"
-          data-controller="form"
-          data-action="form#submit"
-          data-form-button-animate="#button-login"
-          data-form-button-text="{{ __('Loading...') }}"
-          action="{{ route('password.confirm') }}">
+    <form
+        role="form"
+        method="POST"
+        data-controller="form"
+        data-action="form#submit"
+        data-turbo="{{ var_export(Str::startsWith(request()->path(), config('platform.prefix'))) }}"
+        data-form-button-animate="#button-login"
+        data-form-button-text="{{ __('Loading...') }}"
+        action="{{ route('password.confirm') }}">
         @csrf
 
         <div class="form-group">
@@ -37,7 +38,7 @@
                 @endif
             </div>
             <div class="col-md-6 col-xs-12">
-                <button id="button-login" type="submit" class="btn btn-default btn-block" tabindex="3">
+                <button id="button-login" type="submit" class="btn btn-default" tabindex="3">
                     {{ __('Confirm password') }}
                 </button>
             </div>

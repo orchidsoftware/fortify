@@ -8,14 +8,15 @@
         {{__('Two-Factor Authentication')}}
     </h1>
 
-    <form class="m-t-md"
-          role="form"
-          method="POST"
-          data-controller="form"
-          data-action="form#submit"
-          data-form-button-animate="#button-login"
-          data-form-button-text="{{ __('Loading...') }}"
-          action="{{ url('two-factor-challenge') }}">
+    <form
+        role="form"
+        method="POST"
+        data-controller="form"
+        data-action="form#submit"
+        data-turbo="{{ var_export(Str::startsWith(request()->path(), config('platform.prefix'))) }}"
+        data-form-button-animate="#button-login"
+        data-form-button-text="{{ __('Loading...') }}"
+        action="{{ url('two-factor-challenge') }}">
         @csrf
 
         <div class="form-group">

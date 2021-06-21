@@ -4,14 +4,15 @@
 @section('content')
     <h1 class="h4 text-black mb-4">{{ __('Reset Password') }}</h1>
 
-    <form class="m-t-md"
-          role="form"
-          method="POST"
-          data-controller="form"
-          data-action="form#submit"
-          data-form-button-animate="#button-login"
-          data-form-button-text="{{ __('Loading...') }}"
-          action="{{ route('password.update') }}">
+    <form
+        role="form"
+        method="POST"
+        data-controller="form"
+        data-action="form#submit"
+        data-turbo="{{ var_export(Str::startsWith(request()->path(), config('platform.prefix'))) }}"
+        data-form-button-animate="#button-login"
+        data-form-button-text="{{ __('Loading...') }}"
+        action="{{ route('password.update') }}">
         @csrf
 
         <input type="hidden" name="token" value="{{ request()->route('token') }}">
@@ -47,7 +48,7 @@
 
         <div class="row align-items-center">
             <div class="ml-auto col-md-6 col-xs-12">
-                <button id="button-login" type="submit" class="btn btn-default btn-block" tabindex="4">
+                <button id="button-login" type="submit" class="btn btn-default" tabindex="4">
                     {{ __('Reset Password') }}
                 </button>
             </div>

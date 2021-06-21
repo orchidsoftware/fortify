@@ -5,14 +5,15 @@
 
     <h1 class="h4 text-black mb-4">{{ __('Register') }}</h1>
 
-    <form class="m-t-md"
-          role="form"
-          method="POST"
-          data-controller="form"
-          data-action="form#submit"
-          data-form-button-animate="#button-login"
-          data-form-button-text="{{ __('Loading...') }}"
-          action="{{ route('register') }}">
+    <form
+        role="form"
+        method="POST"
+        data-controller="form"
+        data-turbo="{{ var_export(Str::startsWith(request()->path(), config('platform.prefix'))) }}"
+        data-action="form#submit"
+        data-form-button-animate="#button-login"
+        data-form-button-text="{{ __('Loading...') }}"
+        action="{{ route('register') }}">
         @csrf
 
 
@@ -53,7 +54,7 @@
 
         <div class="row align-items-center">
             <div class="ml-auto col-md-6 col-xs-12">
-                <button id="button-login" type="submit" class="btn btn-default btn-block">
+                <button id="button-login" type="submit" class="btn btn-default">
                     {{ __('Register') }}
                 </button>
             </div>
