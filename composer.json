@@ -24,6 +24,9 @@
         "orchestra/testbench": "^7.0",
         "phpunit/phpunit": "^9.3"
     },
+    "conflict": {
+        "laravel/fortify": "<1.10.0"
+    },
     "autoload": {
         "psr-4": {
             "Orchid\\Fortify\\": "src"
