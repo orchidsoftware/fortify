@@ -20,7 +20,6 @@
         "orchid/platform": "^12.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.16",
         "orchestra/testbench": "^7.0",
         "phpunit/phpunit": "^9.3"
     },
