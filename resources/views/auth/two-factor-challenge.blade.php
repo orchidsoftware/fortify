@@ -16,7 +16,7 @@
         data-turbo="{{ var_export(Str::startsWith(request()->path(), config('platform.prefix'))) }}"
         data-form-button-animate="#button-login"
         data-form-button-text="{{ __('Loading...') }}"
-        action="{{ url('two-factor-challenge') }}">
+        action="{{ route('two-factor.login') }}">
         @csrf
 
         <div class="form-group">
