@@ -28,6 +28,7 @@
                 ->autofocus()
                 ->inputmode('numeric')
                 ->pattern("[0-9]*")
+                ->autocomplete('one-time-code')
                 ->placeholder('Verification code from application')
                 ->title('Authentication code:')
             !!}
