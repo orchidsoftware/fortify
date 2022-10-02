@@ -23,6 +23,7 @@
 
             {!!  \Orchid\Screen\Fields\Password::make('password')
                 ->required()
+                ->autocomplete('current-password')
                 ->tabindex(1)
                 ->autofocus()
                 ->placeholder(__('Enter your password'))
