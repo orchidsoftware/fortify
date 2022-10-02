@@ -30,6 +30,7 @@
                 \Orchid\Screen\Fields\Input::make('email')
                 ->type('email')
                 ->autofocus()
+                ->autocomplete('email')
                 ->placeholder('Enter your email')
                 ->title('E-Mail Address')
             !!}

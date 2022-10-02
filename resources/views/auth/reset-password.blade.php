@@ -31,6 +31,7 @@
         <div class="form-group">
             {!!  \Orchid\Screen\Fields\Password::make('password')
                 ->title('Password')
+                ->autocomplete('new-password')
                 ->required()
                 ->tabindex(2)
                 ->placeholder(__('Enter password'))
@@ -40,6 +41,7 @@
         <div class="form-group">
             {!!  \Orchid\Screen\Fields\Password::make('password_confirmation')
                 ->title('Confirm Password')
+                ->autocomplete('new-password')
                 ->required()
                 ->tabindex(3)
                 ->placeholder(__('Enter password'))

@@ -21,6 +21,7 @@
             {!!
                 \Orchid\Screen\Fields\Input::make('name')
                 ->autofocus()
+                ->autocomplete('username')
                 ->placeholder('Sheldon Cooper')
                 ->title('Name')
             !!}
@@ -30,6 +31,7 @@
             {!!
                 \Orchid\Screen\Fields\Input::make('email')
                 ->type('email')
+                ->autocomplete('email')
                 ->placeholder('Enter your email')
                 ->title('E-Mail Address')
             !!}
@@ -39,6 +41,7 @@
             {!!  \Orchid\Screen\Fields\Password::make('password')
                 ->title('Password')
                 ->required()
+                ->autocomplete('new-password')
                 ->help('Use 8 or more characters with a mix of letters, numbers & symbols')
                 ->placeholder(__('Enter password'))
             !!}
@@ -47,6 +50,7 @@
         <div class="form-group">
             {!!  \Orchid\Screen\Fields\Password::make('password_confirmation')
                 ->title('Confirm Password')
+                ->autocomplete('new-password')
                 ->required()
                 ->placeholder(__('Enter password'))
             !!}

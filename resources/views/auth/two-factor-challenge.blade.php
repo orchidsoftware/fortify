@@ -26,6 +26,8 @@
             {!!
                 \Orchid\Screen\Fields\Input::make('code')
                 ->autofocus()
+                ->inputmode('numeric')
+                ->pattern("[0-9]*")
                 ->placeholder('Verification code from application')
                 ->title('Authentication code:')
             !!}
