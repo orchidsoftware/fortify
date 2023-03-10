@@ -16,15 +16,15 @@
         }
     ],
     "require": {
-        "laravel/fortify": "^1.10",
-        "orchid/platform": "^13.0"
+        "laravel/fortify": "^1.16",
+        "orchid/platform": "^14.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^7.0",
-        "phpunit/phpunit": "^9.3"
+        "orchestra/testbench": "^8.0",
+        "phpunit/phpunit": "^10.0"
     },
     "conflict": {
-        "laravel/fortify": "<1.10.0"
+        "laravel/fortify": "<1.16.0"
     },
     "autoload": {
         "psr-4": {
