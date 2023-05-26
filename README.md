@@ -21,7 +21,8 @@ To get started, install the package using composer:
 composer require orchid/fortify
 ```
 
-Disable built-in authorization by changing the value in `config/platform.php`
+
+In `config/platform.php`, disable built-in authorization by changing the value:
 
 ```php
 /*
